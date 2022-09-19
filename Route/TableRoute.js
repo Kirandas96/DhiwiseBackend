@@ -21,7 +21,8 @@ TableRouter.get("/",async(req,res)=>{
             _id:"$level",
             data:{$push:"$value"}
             }
-        }])
+          },
+        {$sort:{_id:1}}])
         let obj={}
         return res.status(200).send(allData)
     } catch (error) {
