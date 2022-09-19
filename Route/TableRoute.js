@@ -30,5 +30,15 @@ TableRouter.get("/",async(req,res)=>{
     }
     
 })
+TableRouter.patch("/",async(req,res)=>{
+    let id=req.query.id
+
+    try {
+        let updatedData=await tableModel.findByIdAndUpdate(id,req.body)
+        return res.status(200).send(updatedData)
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
 
 module.exports=TableRouter
