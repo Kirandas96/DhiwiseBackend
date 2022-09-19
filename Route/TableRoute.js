@@ -30,16 +30,5 @@ TableRouter.get("/",async(req,res)=>{
     }
     
 })
-// TableRouter.patch("/",async(req,res)=>{
-//     const table=new chatModel(req.body)
-    
-//     try {
-//         const savedMsg=await messages.save()
-//         res.status(200).json(savedMsg)
-//     } catch (error) {
-//        res.status(500).json(error) 
-//     }
-    
-// })
 
 module.exports=TableRouter
