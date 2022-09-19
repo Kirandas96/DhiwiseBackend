@@ -19,7 +19,7 @@ TableRouter.get("/",async(req,res)=>{
         const allData=await tableModel.aggregate([{
             $group:{
             _id:"$level",
-            data:{$push:"$value"}
+            data:{$push:{value:"$value",id:"$_id",level:"$level"}}
             }
           },
         {$sort:{_id:1}}])
